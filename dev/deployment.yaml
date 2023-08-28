@@ -1,0 +1,19 @@
+apiversion: apps/v1
+kind: Development
+metadata:
+  name: myapp-development
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  replicas: 2
+  template:
+    metadata:
+      lables:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: maksymvoronkin/weatherapp:1.0
+        ports:
+        - containerPort: 8080
